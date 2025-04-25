@@ -1,0 +1,11 @@
+content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaPostfixProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.javaChainProposalCategory\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.kh.operator.C_InDecrease"><rhs name\="com.kh.operator.C_InDecrease"/></lhs><lhs name\="com.kh.practice.func.OperatorPractice"><rhs name\="com.kh.practice.func.OperatorPractice"/></lhs><lhs name\="com.kh.operator.G_Triple"><rhs name\="com.kh.operator.G_Triple"/></lhs><lhs name\="com.kh.chap01.condition.A_If"><rhs name\="com.kh.chap01.condition.A_If"/></lhs><lhs name\="com.kh.practice.chap01.ControlPractice"><rhs name\="com.kh.practice.chap01.ControlPractice"/></lhs><lhs name\="com.kh.chap3.branch.A_Break"><rhs name\="com.kh.chap3.branch.A_Break"/></lhs><lhs name\="com.kh.chap3.branch.B_Continue"><rhs name\="com.kh.chap3.branch.B_Continue"/></lhs><lhs name\="com.kh.practic.chap02.loop.LoopPractice"><rhs name\="com.kh.practic.chap02.loop.LoopPractice"/></lhs><lhs name\="com.kh.practice.chap02.loop.LoopPractice"><rhs name\="com.kh.practice.chap02.loop.LoopPractice"/></lhs><lhs name\="com.kh.array.B_ArrayCopy"><rhs name\="com.kh.array.B_ArrayCopy"/></lhs><lhs name\="com.kh.array.C_DimensionalArray"><rhs name\="com.kh.array.C_DimensionalArray"/></lhs><lhs name\="com.kh.practice.array.ArrayPractice"><rhs name\="com.kh.practice.array.ArrayPractice"/></lhs><lhs name\="com.kh.example.practice1.medel.vo.Member"><rhs name\="com.kh.example.practice1.medel.vo.Member"/></lhs></history>
+content_assist_number_of_computers=20
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=23
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

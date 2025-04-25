@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.kh.practice1.func.VariablePractice2"/>
+    <fullyQualifiedTypeName name="com.kh.operator.C_InDecrease"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.kh.practice.func.OperatorPractice"/>
+    <fullyQualifiedTypeName name="com.kh.operator.G_Triple"/>
+    <fullyQualifiedTypeName name="com.kh.chap01.condition.A_If"/>
+    <fullyQualifiedTypeName name="com.kh.chap01.condition.B_Switch"/>
+    <fullyQualifiedTypeName name="com.kh.practice.chap01.ControlPractice"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="com.kh.chap3.branch.A_Break"/>
+    <fullyQualifiedTypeName name="com.kh.chap3.branch.B_Continue"/>
+    <fullyQualifiedTypeName name="com.kh.practic.chap02.loop.LoopPractice"/>
+    <fullyQualifiedTypeName name="com.kh.practice.chap02.loop.LoopPractice"/>
+    <fullyQualifiedTypeName name="com.kh.array.B_ArrayCopy"/>
+    <fullyQualifiedTypeName name="com.kh.array.C_DimensionalArray"/>
+    <fullyQualifiedTypeName name="com.kh.practice.array.ArrayPractice"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.kh.chap02_encapsulation.medel.vo.Student"/>
+    <fullyQualifiedTypeName name="com.kh.example.practice1.medel.vo.Member"/>
+    <fullyQualifiedTypeName name="com.kh.chap03_field.model.vo.FieldTest2"/>
+    <fullyQualifiedTypeName name="com.kh.chap03_field.model.vo.FieldTest1"/>
+    <fullyQualifiedTypeName name="com.kh.chap03_field.model.vo.FieldTest3"/>
+</qualifiedTypeNameHistroy>

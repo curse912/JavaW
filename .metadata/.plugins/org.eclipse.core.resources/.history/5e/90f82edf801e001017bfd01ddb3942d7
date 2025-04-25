@@ -1,0 +1,36 @@
+package com.kh.operator;
+
+public class C_InDecrease {
+	/*
+	 *  증감연산자 (단항연산자) ++ , --
+	 *  ++ : 변수에 담긴 값을 1 증가시키는 연산자
+	 *  	 ++변수 (전위연산)
+	 *  	 변수++ (후위연산)
+	 *  -- : 변수에 담긴 값을 1 감소시키는 연산자
+	 *  
+	 *  전위연산 -> 선 증감 후 처리
+	 *  후위연산 -> 선 처리 후 증감
+	 * */
+	
+	public void method1() {
+		//전위연산
+		int num = 10;
+		System.out.println(num);	//10
+		System.out.println(++num);	//11
+		System.out.println(++num);	//12
+		System.out.println(++num);	//13
+		System.out.println(num);	//13
+		
+		//후위연산
+		System.out.println("======================");
+		int num2 = 10;
+		System.out.println(num2);	// 10
+		System.out.println(num2++);	// 10
+		System.out.println(num2);
+		System.out.println(num2);
+		
+		
+		
+	}
+
+}

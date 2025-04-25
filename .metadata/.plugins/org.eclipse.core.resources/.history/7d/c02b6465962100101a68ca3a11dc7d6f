@@ -1,0 +1,5 @@
+package com.kh.chap02_encapsulation.medel.vo;
+
+public class Student {
+
+}
