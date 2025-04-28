@@ -42,7 +42,7 @@ public class Run {
 		System.out.println(tae);
 		
 		
-		
+		//객체 : class를 통해 Heap에 저장공간이 할당된 데이터
 	
 	}
 }

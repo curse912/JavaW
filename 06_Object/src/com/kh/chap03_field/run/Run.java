@@ -21,6 +21,7 @@ public class Run {
 		//static 변수 사용 방법
 		//클래스명.변수명
 		
+		//아래로 쓰는걸 권장
 		System.out.println(FieldTest3.sta);
 		System.out.println(FieldTest3.PI);
 		//클래스명.메서드명();
