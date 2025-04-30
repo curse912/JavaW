@@ -23,6 +23,7 @@ public class PersonMenu {
 		System.out.println("9. 끝내기");
 		System.out.print("메뉴 번호 :");
 		int num = sc.nextInt();
+		sc.nextLine();
 		
 		while(true) {
 			switch (num) {
@@ -37,13 +38,22 @@ public class PersonMenu {
 		System.out.println("1. 학생 추가");
 		System.out.println("2. 학생 보기");
 		System.out.println("9. 메인으로");
+		
+		//int[] count = pc.personCount();
+		//int와 int[] 은 다른것 유의!!!////////
+		int count = pc.personCount()[0];
+	
+		if(count!=3) {
+			System.out.println("학생은 최대 3명까지만 저장 할 수 있습니다.");
+		}
+		
 		System.out.print("메뉴 번호 :");
 		int num = sc.nextInt();
+		sc.nextLine();
+		
+		
 		
 		switch (num) {
-			case 1: 
-				insertStudent(); 
-				break; 
 			case 2: 
 				printStudent();
 				break; 
@@ -51,6 +61,11 @@ public class PersonMenu {
 				System.out.println("메뉴로 돌아갑니다.");
 				mainMenu();
 				break; 
+			case 1: 
+				if(count != 3) {
+					insertStudent(); 
+					break; 
+				}
 			default:  
 				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
 				return;
@@ -83,14 +98,10 @@ public class PersonMenu {
 		
 	}
 	public void insertStudent() {
-			int[] count = pc.personCount();
+		new Student(null, 0, 0, null);
+		
+			int count = pc.personCount()[0];
 			while(true) {
-				
-				if(count[0] >= 3) {
-					System.out.println("더 이상 학생을 추가 할 수 없습니다.");
-					break;
-				}
-				sc.nextLine();
 				
 				System.out.print("학생 이름 : ");
 				String name = sc.nextLine();
@@ -106,25 +117,39 @@ public class PersonMenu {
 				System.out.print("학생 전공 : ");
 				String major = sc.nextLine();
 				
-				System.out.print("그만 하시려면 n, 이어하시려면 아무키나 누르세요 : ");
-				char ch = sc.nextLine().toLowerCase().charAt(0);
-				
-				if(ch == 'n') {
-					studentMenu();
-					break;
+				if(count!= 3) {
+					System.out.print("그만 하시려면 n, 이어하시려면 아무키나 누르세요 : ");
+					char ch = sc.nextLine().toLowerCase().charAt(0);
+					if(ch == 'n') {
+						studentMenu();
+						break;
+					}else if(count>3) {
+						System.out.println("더 이상 학생을 추가 할 수 없습니다.");
+//						break;
+					}
 				}
+//				System.out.print("그만 하시려면 n, 이어하시려면 아무키나 누르세요 : ");
+//				char ch = sc.nextLine().toLowerCase().charAt(0);
+//				
+//				if(ch == 'n') {
+//					studentMenu();
+//					break;
+//				}
 					
 				
 			}
 	}
 	
 	public void printStudent() {
-		Student[] s = pc.printStudent();
-		for(Student st : s) {
-			if(st == null) {
+		//pc의 printStudent()메소드의 반환 값을 이용하여 학생 객체 배열에 저장된
+		//모든 데이터 출력
+		Student[] arr = pc.printStudent();
+		
+		for(Student s : arr) {	//향상된 반복문
+			if(s == null) {
 				break;
 			}
-			System.out.println(st);
+			System.out.println(s);
 		}
 	}
 	

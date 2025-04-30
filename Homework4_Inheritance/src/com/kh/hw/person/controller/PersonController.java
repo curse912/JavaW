@@ -4,39 +4,50 @@ import com.kh.hw.person.model.vo.Employee;
 import com.kh.hw.person.model.vo.Student;
 
 public class PersonController {
-	private Student[] s = new Student[3];
+	private Student[] s = new Student[3];	// [nul   ,null  ,null ]
 	private Employee[] e = new Employee[10];
 	
 	public int[] personCount() {
-		int stCount = 0;
-		int emCount = 0;
+		int[] arr = new int[2];
+		//배열의 인덱스에 들어간 값이 null이라면 저장되지 않은 인덱스
+		
+		//int stCount = 0;
+		//int emCount = 0;
 		for(int i = 0; i<3; i++) {
 			if(s[i]!=null) {
-				stCount++;
+				//stCount++;
+				arr[0] += 1 ;
 			}
 		}
-		for(int i = 0; i<10; i++) {
+		/*for(int i = 0; i<10; i++) {
 			if(e[i]!=null) {
-				emCount++;
+				arr[1] += 1;
+			}
+		}*/
+		for(Employee emp : e) {
+			if(emp != null) {
+				arr[1] += 1;
 			}
 		}
-		int[] result = {stCount,emCount};
-		return result;
+		//int[] result = {stCount,emCount};
+		return arr;
 		
 		
 	}
 	public void insertStudent(String name, int age, int grade, String major) {
 		//s[0] = new Student(name, age, grade, major);
-		int[] count = personCount();
+		Student std = new Student(name, age, grade, major);
+//		int[] count = personCount();
 		
-		if(count[0]>=3) {
-			System.out.println("학생은 최대 3명까지만 저장 할 수 있습니다.");
-			return;
-		}
+//		if(count[0]>=3) {
+//			System.out.println("학생은 최대 3명까지만 저장 할 수 있습니다.");
+//			return;
+//		}
 		
 		for(int i = 0; i<s.length; i++) {
 			if(s[i] == null) {
-				s[i] = new Student(name, age, grade, major);
+//				s[i] = new Student(name, age, grade, major);
+				s[i] = std;
 				break;
 			}
 		}		
