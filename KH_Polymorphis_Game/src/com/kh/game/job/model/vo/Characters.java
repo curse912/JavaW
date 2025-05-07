@@ -62,11 +62,12 @@ public abstract class Characters implements Skill {
 		return exp;
 	}
 	public void setExp(int exp) {
-		if(exp > 100*level) {
+		this.exp += exp;
+		
+		if(exp >= 100*level) {
 			levelup();
 //			this.exp = exp;
 		}
-		this.exp = exp;
 	}
 	
 	

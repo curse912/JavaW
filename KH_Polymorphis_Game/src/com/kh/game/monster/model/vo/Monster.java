@@ -1,5 +1,7 @@
 package com.kh.game.monster.model.vo;
 
+import com.kh.game.job.model.vo.Characters;
+
 public abstract class Monster {
 	private String name;
 	private int atk;
@@ -52,7 +54,7 @@ public abstract class Monster {
 		return "이름" + name + ", 공격력" + atk + ", 체력" + hp + ", 경험치" + exp + "]";
 	}
 	
-	public abstract void attack(Character C);
+	public abstract void attack(Characters C);
 	
 
 }
