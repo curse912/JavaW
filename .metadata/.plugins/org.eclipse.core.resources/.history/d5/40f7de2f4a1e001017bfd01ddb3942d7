@@ -1,8 +1,0 @@
-package com.kh.variable;
-
-public class C_Scanner {
-	public void inputTest1() {
-		
-	}
-
-}

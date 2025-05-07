@@ -1,5 +1,7 @@
 package com.kh.chap03_char.model.dao;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -16,6 +18,25 @@ public class FileCharDao {
 			fw.write('a');
 			fw.write('민');
 			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void fileRead() {
+		// FileReader
+		try(FileReader fr = new FileReader("b_char.txt")){
+			
+			int value = 0;
+			while((value = fr.read()) != -1) {
+				System.out.println((char)value);
+			}
+			
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
