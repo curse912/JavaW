@@ -10,44 +10,37 @@ public class FileController {
 	FileOutputStream fout = null;
 	
 	public boolean checkName(String file) {
-		boolean result = false;
-		
-		if(fd.checkName(file)) {
-			result = true;
-		}
-		return result;
-		
-//		// FileDAO(fd)의 checkName() 매개변수로 file을 넘겨주고
-//		fd.checkName(file);
-//		// 그리고 그 반환 값을 그대로 받아 또 반환해줌
-//		try {
-//			fout.close();
-//		} catch (IOException e) {
-//			e.printStackTrace();
+		return fd.checkName(file);
+//		boolean result = false;
+//		
+//		if(fd.checkName(file)) {
+//			result = true;
 //		}
-		
+//		return result;
+
 		
 		
 	}
 	public void fileSave(String file, StringBuilder sb) {
-		
-		sb.append(file);
-		String result = sb.toString();
-		fd.fileSave(file, result);
-		
-		
+		fd.fileSave(file,sb.toString());
 	}
 	
 	public StringBuilder fileOpen(String file) {
-		fd.fileOpen(file);
-		//반환...................
-		
-		
+		return fd.fileOpen(file);
+//		StringBuilder sb = new StringBuilder();
+//	    try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+//	        String line;
+//	        while ((line = reader.readLine()) != null) {
+//	            sb.append(line).append("\n");
+//	        }
+//	    } catch (IOException e) {
+//	        e.printStackTrace();
+//	    }
+//	    return sb;
 	}
 	public void fileEdit(String file, StringBuilder sb) {
-		sb.append(file);
-		String result = sb.toString();
-		fd.fileEdit(file, result);
+//		sb.append(file);
+		fd.fileEdit(file,sb.toString());
 		
 	}
 }
