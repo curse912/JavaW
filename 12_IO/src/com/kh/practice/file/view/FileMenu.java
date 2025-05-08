@@ -60,13 +60,11 @@ public class FileMenu {
 					System.out.print("이미 존재하는 파일입니다. 덮어쓰시겠습니까?(y/n)");
 					char answer = sc.nextLine().toLowerCase().charAt(0);
 					
-					// y를 입력하면 FileController(fc)에 fileSave() 메소드로 파일 명과 StringBuilder 넘김
 					if(answer == 'n') {
 						return;
 					}
 				}
-				// 만일 저장할 파일 명이 존재하지 않는 파일 명이었다면
-				// 파일 명과 내용을 fc에 fileSave 메소드로 넘김
+				
 				fc.fileSave(nfile, sb);
 			}
 			
