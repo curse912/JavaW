@@ -16,15 +16,16 @@ public class BookDAO {
 	public void fileSave(Book[] bArr) {
 		// “book.txt”를 매개변수로 받는 File 객체를 생성하여 book.txt가 없다면 파일 생성
 		try(ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("book.txt"))){
-			for(Book bk : bArr) {
-				os.writeObject(bk);
+			for(Book bk : bArr) {	//향상된 반복문
+				if(bk !=null) {		// 초기화된 값만 출력
+					os.writeObject(bk);	
+					
+				}
 			}
 			
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -39,25 +40,17 @@ public class BookDAO {
 		try(ObjectInputStream os = new ObjectInputStream(new FileInputStream("book.txt"))){
 			int a = 0;
 			while(true) {
-				try {
 					Book b = (Book)os.readObject();
-					if(a < bArr.length) {
-						bArr[a++] = b;
-					}
-				}catch (EOFException e) {
-					break;
+					bArr[a++] = b;
+//					bArr[a++] = (Book)os.readObject();	//위랑 같은내용쓰
+					
 				}
-				
-			}
-		
 		}catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}catch (EOFException e) {
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return bArr;

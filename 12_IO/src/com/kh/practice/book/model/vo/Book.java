@@ -1,9 +1,11 @@
 package com.kh.practice.book.model.vo;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
-public class Book {
+public class Book implements Serializable{	//직렬화 객체를 byte로 변환
 	private String title;
 	private String author;
 	private int price;
@@ -63,8 +65,12 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", author=" + author + ", price=" + price + ", date=" + date + ", discount="
-				+ discount + "]";
+		//날짜가 감이 안잡혀유
+		Date d = new Date(date.getTimeInMillis());
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 mm월 dd일");
+		return  title + ": \t" + author + "\t" + price + "\t " + sdf.format(d) + "  \t "
+				+ discount ;
+		//sdf.format(date.getTime())
 	}
 	//필드의 값을 반환. 단, date필드는 SimpleDateFormat을 통해“yyyy년 MM월 dd일”로 반환되게 함
 

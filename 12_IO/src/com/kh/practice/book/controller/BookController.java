@@ -13,7 +13,9 @@ public class BookController {
 		//book.txt가 없을 때 만들어줌
 		try{
 			File file = new File("book.txt");
-			file.createNewFile();
+			if(!file.exists()) {	//만약에 file이 존재한다면
+				file.createNewFile();				//file 생성
+			}
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
