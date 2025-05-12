@@ -3,7 +3,10 @@ package com.kh.chap03_generic.run;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.kh.chap03_generic.model.vo.Child1;
 import com.kh.chap03_generic.model.vo.Generic;
+import com.kh.chap03_generic.model.vo.Generic2;
+import com.kh.chap03_generic.model.vo.Parent;
 
 public class Run {
 	public static void main(String[] args) {
@@ -45,6 +48,34 @@ public class Run {
 		//	- <T extends Parent> :  타입변수에는 'Parent클래스' 및 'Parent클래스를  상속받은
 		//							자료형'만 제시할 수 있다.
 		//		↑라는 클래스명
+		//	- <T extends Interface> : Interfacef를 구현한 클래스만 타입변수에 제시가능.
+						//자료형을 제한시키는데에 사용하는 예약어
+		
+		Generic2<Parent> parent = new Generic2<>();
+		Generic2<Child1> child1 = new Generic2<>();
+//		Generic2<String> str = new Generic2<>();	//Parent의 자식이 아니므로 객체 생성 불가.
+		
+		parent.setT(new Parent());	//T의 자료형이Parent 였음
+		parent.printing();
+		
+		
+		/* 4. 와일드카드(?)
+			- Generic에 들어가야할 자료형을 모르는 경우 사용.
+			- 와일드카드의 의미는 어떤 자료형이 들어올지 모른다(Unknown)의 의미로 사용. ?가 어떤 자료형이든 올수 있다라는
+			  (arry)의 의미가 아니다.
+			- ?에는 super와 extends를 사용하여 와일드카드의 범위를 제한할 수 있다.
+			- ? extends T : 상한제한 => 와일드카드의 범위를 T또는 T의 자식들로 제한.
+			-  ? super T  : 하한제한 => 와일드카드의 범위를 T또는 T의 조상들로 제한.
+		*/
+		Generic2<?> unknown = new Generic2<>();
+//		unknown.setT(new Parent());	//에러발생
+		// => ?는 자료형의 범위가 정해져 있찌 않은 상태(unknown).
+		// ?로 타입변수 사용시 올바른 값이 들어갓는지 검사가 불가능하므로 에러를 발생.
+		// ?의 제대로된 사용을 위해선 extends와 super을 활용하여 ?의 점위를 정해줘야한다.
+		
+		// 1) extends를 통한 와일드카드 범위제한
+		Generic2<? extends Parent>unknown2 = new Generic2<>();
+		// ?의 범위 : Parent, Praentd의 자식들
 		
 		
 		

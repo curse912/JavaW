@@ -1,6 +1,7 @@
 package com.kh.practice.set.view;
 
 import java.util.Scanner;
+import java.util.TreeSet;
 
 import com.kh.practice.set.controller.LotteryController;
 import com.kh.practice.set.model.vo.Lottery;
@@ -61,6 +62,18 @@ public class LotteryMenu {
 		
 	}
 	public void deleteObject() {
+		System.out.println("이름 : ");
+		String name = sc.nextLine();
+		
+		System.out.println("핸드폰 번호 (- 빼고) : ");
+		String phone = sc.nextLine();
+		Lottery l = new Lottery(name,phone);
+		
+		if(lc.deleteObject(l)) {
+			System.out.println("삭제 완료 되었습니다.");
+		}else {
+			System.out.println("존재하지 않는 대상입니다.");
+		}
 		
 //		삭제할 대상의 이름과 핸드폰 번호를 받고 매개변수 있는 Lottery 생성자를 이용해
 //		객체에 정보를 담아 lc에 객체를 보냄.
@@ -74,9 +87,25 @@ public class LotteryMenu {
 
 	}
 	public void sortedWinObject() {
+		TreeSet<Lottery> sorted = lc.sortedSinObject();
+		for(Lottery l :sorted) {
+			System.out.println(l);
+		}
+		
 //		lc에서 받아온 Set객체를 Iterator를 통해 출력
 	}
 	public void searchWinner() {
+		System.out.println("이름 : ");
+		String name = sc.nextLine();
+		
+		System.out.println("핸드폰 번호 (- 빼고) : ");
+		String phone = sc.nextLine();
+		Lottery l = new Lottery(name,phone);
+		if(lc.searchWinner(l)) {
+			System.out.println("축하합니다. 당첨 목록에 존재합니다.");
+		}else {
+			System.out.println("안타깝지만 당첨 목록에 존재하지 않습니다.");
+		}
 //		검색할 대상의 이름과 핸드폰 번호를 받고 매개변수 있는 Lottery 생성자를 이용해
 //		객체에 정보를 담아 lc에 객체를 보냄.
 //		받은 결과에 따라 true면 “축하합니다. 당첨 목록에 존재합니다.”,
