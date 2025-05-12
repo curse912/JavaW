@@ -75,7 +75,32 @@ public class Run {
 		
 		// 1) extends를 통한 와일드카드 범위제한
 		Generic2<? extends Parent>unknown2 = new Generic2<>();
-		// ?의 범위 : Parent, Praentd의 자식들
+		// ?의 범위 : Parent, Parent의 자식들
+		
+//		unknown2.setT(new Parent());	// ? 범위에 Parent의 자식들도 포함되어있으므로, "대입불가"
+										// Parent가 Child1에 넣을려면 다움캐스팅 필요함 그래서 안된다ㅏㅏㅏㅏ
+//		unknown2.setT(new Child1());	// ? 범위에 Child2도 포함되어있으므로, "대입불가"
+		
+		Parent p = unknown2.getT();	// ?가 Parent이든, 그 자식이든 다형성에 의해 값을 추출하여 대입가능
+		// extends를 통한 타입 제한은 데이터를 "가져올때" 사용한다.
+		// setter가 아닌 getter로 사용
+		
+		// 2) super을 통한 와일드카드 범위제한 : 하한선 경계 설정
+		// 	? super Parent : 와일드카드의 범위는 최소 Parent, Parent의 조상 클래스들
+		Generic2<? super Parent> unknown3 = new Generic2<>();
+		// 	?의 범위 : Parent와, Object
+		
+		unknown3.setT(new Parent());
+//		Object o = new Parent();	//업캐스팅
+//		Parent p2 = new Parent();
+		unknown3.setT(new Child1());
+//		unknown3.setT(new Child2());	//최소 자료형이 Parent이기 때문에 대입문제가 없음.
+		// 값을 "대입"할 때는 super를 쓰는게 적절하다.
+		
+//		Parent p3 = unknown3.getT();
+//		Parent p4 = new Parent();
+//		Parent p5 = new Object();	//상속관계이나, 저장시 다움캐스팅이 필요하므로  컴파일에러발생
+
 		
 		
 		

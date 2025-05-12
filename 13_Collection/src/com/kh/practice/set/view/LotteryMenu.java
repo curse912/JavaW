@@ -1,5 +1,6 @@
 package com.kh.practice.set.view;
 
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.TreeSet;
 
@@ -20,7 +21,7 @@ public class LotteryMenu {
 			System.out.println("4. 정렬된 당첨 대상 확인");
 			System.out.println("5. 당첨 대상 검색");
 			System.out.println("9. 종료");
-			System.out.println("메뉴 번호 선택 : ");
+			System.out.print("메뉴 번호 선택 : ");
 			int num = sc.nextInt();
 			sc.nextLine();
 			
@@ -37,23 +38,24 @@ public class LotteryMenu {
 	}
 	
 	public void insertObject() {
-		System.out.println("추가할 추첨 대상 수 : ");
+		System.out.print("추가할 추첨 대상 수 : ");
 		int num = sc.nextInt();
 		sc.nextLine();
 		
 		for(int i =0; i<num; i++) {
-			System.out.println("이름 : ");
+			System.out.print("이름 : ");
 			String name = sc.nextLine();
 			
-			System.out.println("핸드폰 번호('-'빼고) : ");
+			System.out.print("핸드폰 번호('-'빼고) : ");
 			String phone = sc.nextLine();
 			
 			Lottery l = new Lottery(name,phone);
-			
-			if(lc.insertObject(l)==false) {
-				System.out.println("중복된 대상입니다. 다시 입력하세요.");
-			}
 			lc.insertObject(l);
+			
+			if(lc.insertObject(l)) {
+				System.out.println("중복된 대상입니다. 다시 입력하세요.");
+				i--;	//이걸 왜한다 했더라..
+			}
 		}
 		System.out.println(num+"명 추가 완료되었습니다.");
 
@@ -62,12 +64,13 @@ public class LotteryMenu {
 		
 	}
 	public void deleteObject() {
-		System.out.println("이름 : ");
+		System.out.print("삭제할 이름 : ");
 		String name = sc.nextLine();
 		
-		System.out.println("핸드폰 번호 (- 빼고) : ");
+		System.out.print("삭제할 핸드폰 번호 (- 빼고) : ");
 		String phone = sc.nextLine();
 		Lottery l = new Lottery(name,phone);
+//		boolean result = lc.deleteObject(l);
 		
 		if(lc.deleteObject(l)) {
 			System.out.println("삭제 완료 되었습니다.");
@@ -87,18 +90,20 @@ public class LotteryMenu {
 
 	}
 	public void sortedWinObject() {
-		TreeSet<Lottery> sorted = lc.sortedSinObject();
-		for(Lottery l :sorted) {
-			System.out.println(l);
+		TreeSet<Lottery> ts = lc.sortedSinObject();
+		Iterator<Lottery> lter = ts.iterator();
+		while(lter.hasNext()) {
+			System.out.println(lter.hasNext());
+			break;
 		}
-		
+//		for(Lottery l :ts) {  System.out.println(l);  }
 //		lc에서 받아온 Set객체를 Iterator를 통해 출력
 	}
 	public void searchWinner() {
-		System.out.println("이름 : ");
+		System.out.print("검색 이름 : ");
 		String name = sc.nextLine();
 		
-		System.out.println("핸드폰 번호 (- 빼고) : ");
+		System.out.print("검색 핸드폰 번호 (- 빼고) : ");
 		String phone = sc.nextLine();
 		Lottery l = new Lottery(name,phone);
 		if(lc.searchWinner(l)) {
