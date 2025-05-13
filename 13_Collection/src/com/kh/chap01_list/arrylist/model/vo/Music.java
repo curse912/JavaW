@@ -56,7 +56,7 @@ public class Music implements Comparable<Music> {
 	 * 	- 오버라이딩하기전에는 객체가 저장된 주소값을 10진수 형태로 반환해주는 함수
 	 * 	- 단, equals매서드를 오버라이딩 한다면 hashcode()메서드도 함께 오버라이딩 해줘야한다.
 	 * 	- hashCode는 HashMap, HashSet에서 데이터를 저장하기 위한 key값에 사용되는 메서드.
-	 * 	- hashCode는 오버라이딩하지 ㅇ낳고, equals매서드만 오버라이딩 한다면 논리적으로 두 객체는 같지만,
+	 * 	- hashCode는 오버라이딩하지 않고, equals매서드만 오버라이딩 한다면 논리적으로 두 객체는 같지만,
 	 * 	  데이터가 저장될때는 다른 주소값을 가지므로 중복으로 데이터가 저장된다.
 	 * */
 	//희히....이해가... 방구에유...

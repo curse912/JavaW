@@ -1,11 +1,10 @@
 package com.kh.practice.map.view;
 
-import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.Map.Entry;
 
-import com.kh.chap04_map.part01_hashMap.model.vo.Snack;
 import com.kh.practice.map.controller.MemberController;
 import com.kh.practice.map.model.vo.Member;
 
@@ -47,12 +46,12 @@ public class MemberMenu {
 		switch(num) {
 		case 1 : changePassword(); break;
 		case 2 : changeName(); break;
-		case 3 : System.out.println("로그아웃 되었습니다."); break;
+		case 3 : System.out.println("로그아웃 되었습니다."); return;
 		default : System.out.println("잘못 입력하셨습니다. 다시 입력하세요");
 		}
 		
 	}
-	public void joinMembership() { //오류발생 : 중복된 아이디라고 계속뜸..
+	public void joinMembership() { //오류발생 : 중복된 아이디라고 계속뜸..	==> mc.joinMembership(id,m)을 두번 호출해서 그랬었다.
 		while(true) {
 			System.out.println("아이디 : ");
 			String id = sc.nextLine();
@@ -69,6 +68,7 @@ public class MemberMenu {
 			//두번째 호출에서 한번 더 시도하기 때문에, 
 			//이미 첫번째 mc.joinMembership(id, m)이 저장되어있어 result가 false가 나옴.
 			boolean result = mc.joinMembership(id, m);
+			//boolean result = mc.joinMembership(id,new Member(password,name); 	//합쳐서 이렇게 써도된다리
 			if(result == true) {
 				System.out.println("성공적으로 회원가입 완료했습니다.");
 				break;
@@ -93,9 +93,11 @@ public class MemberMenu {
 			System.out.println("비밀번호 : ");
 			String password = sc.nextLine();
 			
-			mc.logIn(id, password);
+			String name = mc.logIn(id, password);
+			
+//			mc.logIn(id, password);	//여기 앞에 name 선언
 			if(!(mc.logIn(id, password)==null)) {
-				System.out.println("님, 환영합니다."/*이름!!!!!!*/);	//이름 어데갔누
+				System.out.println(name + "님, 환영합니다.");	//이름을 어떻게 써야하나 고민했었ㄷ..
 				memberMenu();
 				break;
 			}else {
@@ -115,7 +117,7 @@ public class MemberMenu {
 			System.out.println("현재 비밀번호 : ");
 			String oldPw = sc.nextLine();
 			
-			System.out.println("아이디 : ");
+			System.out.println("변경할 비밀번호 : ");
 			String newPw = sc.nextLine();
 			
 			boolean result  = mc.changePassword(id, oldPw, newPw);
@@ -139,9 +141,10 @@ public class MemberMenu {
 			System.out.println("비밀번호 : ");
 			String password = sc.nextLine();
 			
-			if(mc.logIn(id, password)!=null) {
-				mc.logIn(id, password);
-				System.out.println("현재 설정된 이름 : "/*현재 이름*/);
+			String name = mc.logIn(id, password);
+			if(name!=null) {
+//				mc.logIn(id, password);
+				System.out.println(name+"현재 설정된 이름 : ");
 				
 				System.out.println("변경할 이름 : ");
 				String newName = sc.nextLine();
@@ -169,14 +172,11 @@ public class MemberMenu {
 		System.out.println("검색할 이름 : ");
 		String name = sc.nextLine();
 		
-		mc.sameName(name);
-		
-//		Set<Entry<String,Member>> entrySet = map.entrySet();
-//		Iterator<Entry<String, Member>> iter = entrySet.iterator();
-//		while(iter.hasNext()) {
-//			Entry<String, Snack>entry = iter.next();
-//			System.out.println(entry.getName()+"-"+ entry.getId());
-//		}
+		TreeMap tm = mc.sameName(name);
+		Set<Entry<String, Member>> entrySet = tm.entrySet();
+		for(Entry<String,Member> entry : entrySet) {
+			System.out.println(entry.getValue().getName() + "-" + entry.getKey());
+		}
 		
 //		검색할 이름을 받고 mc의 sameName()메소드로 넘김.
 //		반환 값을 가지고 entrySet()을 이용하여 ‘이름-아이디’ 형식으로 출력

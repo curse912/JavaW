@@ -15,7 +15,8 @@ public class Run {
 		 * 	- 계층구조를 보면 List, Set계열과 다른 Map계열 인터페이스만 상속한 클래스로 사용하는 매서드가 다르다.
 		 * 	- 데이터를 저장할때 key, value를 한 쌍으로 저장하고, Key를 통해 value가 저장된 위치에 접근한다.
 		 * 	- Key값의 중복을 허용하지 않는다.
-		 * 	- 동일한 key값에 데이터를 정하면 마지막으로 추가도니 value값이 저장된다.
+		 * 	- 동일한 key값에 데이터를 정하면 마지막으로 추가된 value값이 저장된다.
+		 * -----HashCode를 사용, HashTable에저장
 		 * */
 		
 		HashMap<String, Snack>  hm = new HashMap<>();

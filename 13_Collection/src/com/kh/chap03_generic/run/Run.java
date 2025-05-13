@@ -80,6 +80,7 @@ public class Run {
 //		unknown2.setT(new Parent());	// ? 범위에 Parent의 자식들도 포함되어있으므로, "대입불가"
 										// Parent가 Child1에 넣을려면 다움캐스팅 필요함 그래서 안된다ㅏㅏㅏㅏ
 //		unknown2.setT(new Child1());	// ? 범위에 Child2도 포함되어있으므로, "대입불가"
+										// Child1 != Child2
 		
 		Parent p = unknown2.getT();	// ?가 Parent이든, 그 자식이든 다형성에 의해 값을 추출하여 대입가능
 		// extends를 통한 타입 제한은 데이터를 "가져올때" 사용한다.

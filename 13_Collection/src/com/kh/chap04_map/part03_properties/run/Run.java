@@ -13,6 +13,7 @@ public class Run {
 		 * 	- 단, Properties는 key, value값을 모두 String으로 관리하며, 파일입출력(IO)메서드를
 		 * 	  지원하며, Properties내부의 데이터를 출력하거나, 읽어들이는 기능을 제공한다.
 		 * 	- 프로젝트의 설정 정보를 기록하는데 자주 사용되는 클래스.
+		 * ---------데이터를 HashMap에 저장됨
 		 * */
 		Properties prop = new Properties();
 		

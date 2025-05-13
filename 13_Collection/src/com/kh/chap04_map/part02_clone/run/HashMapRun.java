@@ -19,6 +19,9 @@ public class HashMapRun <K,V>{
 			this.next = next;
 		}
 	}
+//	인덱스 ( ) ( ) ( ) ( ) ( ) ( )
+//		   0  1   2   3   4   5
+//	하나의 인덱스에 여러값을 넣기위해 next사용
 	
 	
 	public HashMapRun(int capacity) {
