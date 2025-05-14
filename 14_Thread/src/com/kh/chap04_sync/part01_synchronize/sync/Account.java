@@ -19,13 +19,10 @@ public class Account {
 	 * 
 	 * 2. synchronized block을 사용하기 (추천)
 	 * 	- 동기화가 필요한 메서드의 일부 코드 블락에 Lock을 거는 방법
-	 * 	- 임계역역이 아닌 지역까지 모든 스레드가 접근하기 때문에, 매서드 전체에 Lock거는 1번 방법보다 좋다.
-	 * 
-	 * 
-	 * 
+	 * 	- 임계영역이 아닌 지역까지 모든 스레드가 접근하기 때문에, 매서드 전체에 Lock거는 1번 방법보다 좋다.
 	 * */
 	public /*synchronized*/ void withdraw(int money) {
-		String thName = Thread.currentThread().getName();
+		String thName = Thread.currentThread().getName();	//
 		synchronized(this){
 			
 		}
