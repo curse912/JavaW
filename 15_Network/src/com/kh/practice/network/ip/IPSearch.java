@@ -19,8 +19,9 @@ public class IPSearch {
 			InetAddress[] arr = InetAddress.getAllByName(hName);
 			
 			System.out.println(hName+ "는 " +arr.length+ "개의 IP주소를 가지고있습니다.");
-			for(int i = 0; i < arr.length; i++) {
-				System.out.println(i+1+"번 IP = "+arr[i].getHostAddress());
+			//int count = 1;
+			for(int i = 0; i < arr.length; i++) {	//(InetAddress i : arr)
+				System.out.println(i+1+"번 IP = "+arr[i].getHostAddress());	// count++
 			}			
 		} catch (UnknownHostException e) {
 			e.printStackTrace();

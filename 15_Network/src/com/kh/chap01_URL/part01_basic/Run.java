@@ -53,12 +53,12 @@ public class Run {
 	public void test2() {
 		/*
 		 * URL
-		 * 	- 인터넷상에 존재하는 서버들의 자우너에 접근할 수 있는 주소.
+		 * 	- 인터넷상에 존재하는 서버들의 자원에 접근할 수 있는 주소.
 		 * 	- 자바에서는 URL클래스로 URL자원을 다룰 수 있다.
 		 * 	- 실제 URL자원에 대한 객체를 생성하여 자원에 연결하고, 데이터를 읽어올 수 있다.
 		 * 
 		 * URL의 구조
-		 * 	- https://khedu.co.kr:443https://khedu.co.kr/project/teamView.kh?no=5385&cpage=1
+		 * 	- https://khedu.co.kr:443/project/teamView.kh?no=5385&cpage=1
 		 * 		>    protocol : 통신규약.(http, frp, smtp, file,.....) 
 		 * 						< https:// >
 		 * 		>    hostname : 도메인 이름( ip주소 ) 
