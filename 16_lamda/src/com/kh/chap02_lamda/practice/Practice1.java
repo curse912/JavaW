@@ -15,6 +15,15 @@ public class Practice1 {
 			 }
 		 }
 	}
+	
+	//여기에 적어도됨
+//	interface StringChecker {
+//		
+//		boolean check(String s);
+//		
+//
+//	}
+
 
 
 }

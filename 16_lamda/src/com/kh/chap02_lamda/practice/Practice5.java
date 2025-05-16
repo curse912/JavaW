@@ -3,6 +3,8 @@ package com.kh.chap02_lamda.practice;
 import java.util.Objects;
 import java.util.function.BiFunction;
 
+import javax.management.RuntimeErrorException;
+
 public class Practice5 {
 	public static void main(String[] args){
 		BiFunction<Integer, Integer, Integer>
@@ -19,16 +21,6 @@ public class Practice5 {
 		}
 		public static BiFunction<Integer, Integer, Integer> getOperator(String type) {
 		 //코드 구현
-//			getOperator(type) = (s1 , s2 ) -> {
-//				switch(type){
-//					case "+" : return s1 + s2;
-//					case "*" : return s1 * s2;
-//					case "-" : return s1 - s2;
-//					case "/" : return s1 / s2;
-//					case "%" : return s1 + s2;
-//					default : return null;
-//				}
-//			};
 			 Objects.requireNonNull(type);
 		        return (Integer x, Integer y) -> {
 		        	switch(type) {
@@ -40,8 +32,15 @@ public class Practice5 {
 		        	default : return null;
 		        	}
 		        	
-		        }
-			;
+		        };
+//		        switch(type) {
+//		        	case "+" : return (x, y) -> x + y;
+//		        	case "*" : return (x, y) -> x * y;
+//		        	case "-" : return (x, y) -> x - y;
+//		        	case "/" : return (x, y) -> x / y;
+//		        	case "%" : return (x, y) -> x % y;
+//		        	default : throw new RuntimeException("잘못된 연산자입니다.");
+//	        	}
 		}
 
 

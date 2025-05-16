@@ -10,6 +10,10 @@ public class Practice4 {
 		printer.accept("이순신", 88);
 
 		}
-
+//	interface MyFunction2 {	
+//
+//	void accept(K k, A a);
+//	}
+	
 
 }

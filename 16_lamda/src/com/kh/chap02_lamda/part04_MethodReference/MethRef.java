@@ -1,4 +1,4 @@
-package com.kh.chap01_innerClass.part04_MethodReference;
+package com.kh.chap02_lamda.part04_MethodReference;
 
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
