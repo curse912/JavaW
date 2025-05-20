@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 public class StreamMethods {
 	/*
-	 * 스트림의 중간연ㅅ나 메서드들과 최종처리 메서드들
+	 * 스트림의 중간연산 메서드들과 최종처리 메서드들
 	 * 
 	 * 자주 사용되는 중간연산 메서드
 	 * 	1) distinct : 중복값 제거 메서드
@@ -24,7 +24,7 @@ public class StreamMethods {
 	 * 최종연산 메서드들
 	 * 	1)   Iterating 계열 	: forEach
 	 * 	2)  Collecting 계열 	: collect(Collectior.컬렉션 메서드) 
-	 * 						  -> 스크림의 내부 요소를 원하는 계열의 컬렉션으로 변환햊는 메서드
+	 * 						  -> 스크림의 내부 요소를 원하는 계열의 컬렉션으로 변환해주는 메서드
 	 * 	3)  Calculating 계열 	: minx, max, sum, average... 
 	 * 						  -> 산술연산관련 최종 처리 메서드
 	 * 	4)   Matching 계열 	: anyMatch, allMatch, noneMatch...

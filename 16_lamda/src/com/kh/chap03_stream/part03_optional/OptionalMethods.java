@@ -40,6 +40,8 @@ public class OptionalMethods {
 				return email;
 			}
 		}
+//		OPtional사용 전 방법
+//		
 //		if(order != null && order.getMember() != null) {
 //			Member m = order.getMember();
 //			String email = m.getEmail();
